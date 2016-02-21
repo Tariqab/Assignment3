@@ -7,10 +7,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-/**
- * @author Tariq Ali
- *
- */
 
 public class CalculatorTest {
 
@@ -71,7 +67,11 @@ public class CalculatorTest {
 	@Test
 	public void testGetHistory() {
 		Calculator test = new Calculator();
-		assertEquals("", test.getHistory());
+		test.add(7);
+		test.multiply(3);
+		test.divide(2);
+		test.subtract(1);		
+		assertEquals("0 + 7 * 3 / 2 - 1", test.getHistory());
 	}
 
 }
